@@ -4,8 +4,6 @@ defmodule TH do
 
   def next_branch(_name, decode \\ true) do
 
-    decoded_name = if decode, do: :base64.decode(name), else: name
-
     msg = """
 
     Congratulations!

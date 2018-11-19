@@ -14,7 +14,7 @@ defmodule Similar.Ngrams do
     string
     |> normalize
     |> as_word_list
-    |> Enum.chunk(size, 1)
+    |> Enum.chunk_every(size, 1, :discard)
     |> Enum.uniq
     |> Enum.into(MapSet.new)
   end
@@ -31,5 +31,5 @@ defmodule Similar.Ngrams do
     string
     |> String.split(" ", trim: true)
   end
-  
+
 end
