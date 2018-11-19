@@ -24,7 +24,7 @@ defmodule Similar.Shingle do
 
   # see https://en.wikipedia.org/wiki/Jaccard_index
   def jaccard(set1, set2) do
-    import Set
+    import MapSet
     size(intersection(set1, set2)) / size(union(set1, set2))
   end
 end

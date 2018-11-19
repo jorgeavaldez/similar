@@ -17,7 +17,7 @@ defmodule Similar.Ngrams do
     string
     |> normalize
     |> as_word_list
-    |> Enum.chunk(size, 1)
+    |> Enum.chunk_every(size, 1, :discard)
     |> Enum.reduce(MapSet.new, fn (ngram, set) -> MapSet.put(set, ngram) end)
   end
 
@@ -31,5 +31,5 @@ defmodule Similar.Ngrams do
     string
     |> String.splitter(" ", trim: true)
   end
-  
+
 end
