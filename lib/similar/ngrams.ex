@@ -4,6 +4,9 @@ defmodule Similar.Ngrams do
 
   def normalize(string) do
     # your code goes here
+    string
+    |> String.downcase()
+    |> String.replace(@non_word_chars, " ")
   end
 
 end
